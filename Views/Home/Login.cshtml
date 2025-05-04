@@ -1,0 +1,41 @@
+﻿@using ProjectHttpClient.Dto.Login
+@model UsuarioLoginDto
+
+@{
+    Layout = "_LayoutDeslogada";
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-dark" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-dark" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<h1>Sistema de Usuário</h1>
+
+<div class="container mt-5">
+    <form asp-action="Login" asp-controller="Home" method="post">
+         <div class="mb-3">
+             <label class="form-label">Email:</label>
+             <input class="form-control" type="email" asp-for="Email" />
+         </div>
+
+          <div class="mb-3">
+             <label class="form-label">Senha:</label>
+            <input class="form-control" type="password" asp-for="Senha"  />
+         </div>
+
+         <button type="submit" class="btn btn-success w-100 mb-2">Entrar</button>
+         <a asp-action="Registrar" asp-controller="Home" class="btn btn-secondary w-100">Cadastrar-se</a>
+    </form>
+</div>
