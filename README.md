@@ -9,6 +9,8 @@
 ✅ Bootstrap
 
 ✅ Padrão MVC
+
+✅ Repository Pattern
  
 🚀  Consumindo a api de usuários com httpClient
 📁 Gerenciamento de usuarios + Autenticação
